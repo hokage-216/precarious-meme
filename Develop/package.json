@@ -1,18 +1,18 @@
 {
   "name": "JATE",
   "version": "1.0.0",
-  "description": "",
+  "description": "Just Another Text Editor - A Progressive Web Application (PWA) for editing text and code snippets offline.",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
-    "start": "",
-    "server": "",
-    "build": "",
-    "install": "",
-    "client": ""
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "build": "webpack --config webpack.config.js --mode production",
+    "install": "npm install",
+    "client": "webpack-dev-server --open --config webpack.config.js --mode development"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["pwa", "text-editor", "offline", "web-application"],
+  "author": "Your Name",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
@@ -20,6 +20,10 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
+
